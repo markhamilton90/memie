@@ -1,0 +1,53 @@
+body.dark-to-light {
+    animation: darkToLight 5s forwards;
+}
+
+.confetti {
+
+    img {
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    div:not(.hidden) .heart {
+        animation: pulse .5s forwards;
+    }
+
+    .balloon {
+        cursor: pointer;
+        transition: scale .15s, opacity 1s 1s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        &:active {
+            scale: 1.3;
+        }
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 1;
+        }
+    }
+
+    .top-text,
+    .bottom-text {
+        font-weight: bold;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .top-text {
+        top: 15%;
+        font-size: 90px;
+        text-transform: uppercase;
+        color: hotpink;
+        mix-blend-mode: multiply;
+        white-space: nowrap;
+    }
+    .bottom-text {
+        font-size: 80px;
+        top: 70%;
+        color: violet;
+    }
+}

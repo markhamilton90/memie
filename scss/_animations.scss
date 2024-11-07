@@ -1,0 +1,105 @@
+@keyframes bounce {
+    0%, 60%, 75%, 90% {
+        transform: translateY(0);
+    }
+    70% {
+        transform: translateY(-30px);
+    }
+    85% {
+        transform: translateY(-15px);
+    }
+    95% {
+        transform: translateY(-4px);
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        z-index: -1;
+    }
+    100% {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        pointer-events: none;
+    }
+}
+@keyframes riseUp {
+    0% {
+        top: 15px;
+        opacity: 0;
+        font-size: 32px;
+    }
+    50% {
+        top: -20px;
+        /* font-size: 40px; */
+    }
+    100% {
+        top: 0px;
+        opacity: 1;
+        font-size: 32px;
+    }
+}
+@keyframes floatAway {
+    0% {
+        top: 48%;
+        left: 50%;
+        opacity: 1;
+        scale: 1;
+    }
+    20% {
+        left: calc(50% - 25px);
+    }
+    60% {
+        left: calc(50% + 25px);
+    }
+    100% {
+        top: -100px;
+        left: 50%;
+        opacity: 0;
+        scale: .8;
+    }
+}
+@keyframes pulse {
+    0% {
+        scale: .75;
+    }
+    20% {
+        scale: 1.2;
+    }
+    60% {
+        scale: .85;
+    }
+    100% {
+        scale: 1;
+    }
+}
+@keyframes darkToLight {
+    0%, 20% {
+        background: black;
+    }
+    100% {
+        background: white;
+    }
+}
+@keyframes lower {
+    0% {
+        margin-top: 0;
+        scale: 1;
+    }
+    100% {
+        margin-top: 30%;
+        scale: .7;
+    }
+}

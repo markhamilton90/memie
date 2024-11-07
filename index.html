@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Memie</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <div id="envelope1" class="message align-center justify-center" data-target="envelope2">Babe...</div>
+        <div id="envelope2" class="message align-center justify-center" data-target="envelope3">I love you baby girl</div>
+        <div id="envelope3" class="message align-center justify-center" data-target="storyboard">I love you soooo much</div>
+
+        <div id="countdown1" class="message align-center justify-center" data-target="countdown2">Only 43 days babe</div>
+        <div id="countdown2" class="message align-center justify-center" data-target="countdown3">43 days, until I can finally hold you in my arms</div>
+        <div id="countdown3" class="message align-center justify-center" data-target="storyboard">I'm so excited to travel to the place you call home, to have adventures and explore Cebu and El Nido, and even more excited to get to experience it all with you</div>
+
+        <section data-storyboard="1" class="active storyboard d-flex justify-center align-center">
+            <div class="envelope-wrapper" data-target="envelope1">
+                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-solid fa-envelope-open"></i>
+                <i class="fa-solid fa-heart"></i>
+                <span class="text">Memie</span>
+            </div>
+        </section>
+
+        <section data-storyboard="2" class="storyboard storyboard2 countdown d-flex align-center">
+            <div class="countdown-wrapper" data-target="countdown1">
+                <div class="track-wrapper">
+
+                    <img class="start-icon" src="./images/usa.svg" alt="United States">
+                    <img class="end-icon" src="./images/ph.svg" alt="Philippines">
+
+                    <div class="track"></div>
+
+                    <div class="mask">
+                        <div class="icon fa fa-plane"></div>
+                    </div>
+                </div>
+                <div class="counter">
+                    <span class="count">60</span> Days Remaining
+                </div>
+            </div>
+        </section>
+
+        <section data-storyboard="3" class=" storyboard confetti d-flex justify-center align-center">
+
+            <p id="balloon1" class="message" data-target="balloon2">Now babe...</p>
+            <p id="balloon2" class="message" data-target="balloon3">There's just one thing you have to do...</p>
+            <p id="balloon3" class="message" data-target="balloon">Pop the balloon babe 😏</p>
+
+            <img id="balloon" class="balloon active" draggable="false" width="100" src="./images/balloon.png" alt="Balloon">
+            <div class="heart-wrapper hidden">
+                <img class="heart" draggable="false" width="350" src="./images/memie-heart.png" alt="Memie">
+                <div class="top-text">Happy Birthday</div>
+                <div class="bottom-text">Memie!!!</div>
+            </div>
+
+        </section>
+
+        <!-- <section data-storyboard="3" class="storyboard gallery">
+            <div class="image-gallery">
+                <div class="image-column">
+                    <img src="./images/memie.png" alt="Memie">
+                    <img src="./images/memie.png" alt="Memie">
+                </div>
+                <div class="image-column">
+                    <img src="./images/memie.png" alt="Memie">
+                    <img src="./images/memie.png" alt="Memie">
+                </div>
+                <div class="image-column">
+                    <img src="./images/memie.png" alt="Memie">
+                    <img src="./images/memie.png" alt="Memie">
+                </div>
+            </div>
+        </section> -->
+
+        <script type="text/javascript" src="./script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    </body>
+</html>
