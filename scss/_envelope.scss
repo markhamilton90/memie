@@ -26,7 +26,7 @@
         font-weight: 500;
     }
     &.active {
-        animation: fadeOut 2s .5s forwards;
+        animation: fadeOut 1.5s .5s forwards;
         .fa-envelope {
             display: none;
         }

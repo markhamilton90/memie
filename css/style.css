@@ -103,6 +103,16 @@
     scale: 0.7;
   }
 }
+@keyframes raise {
+  0% {
+    margin-bottom: 0;
+    scale: 1;
+  }
+  100% {
+    margin-bottom: 15%;
+    scale: 0.8;
+  }
+}
 *,
 *:before,
 *:after {
@@ -131,11 +141,11 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 500;
   color: #555;
   text-align: center;
-  padding: 50px;
+  padding: 8%;
   margin: 0;
   cursor: pointer;
   opacity: 0;
@@ -169,6 +179,14 @@ body {
 
 .align-center {
   align-items: center !important;
+}
+
+.align-start {
+  align-items: flex-start !important;
+}
+
+.align-end {
+  align-items: flex-end !important;
 }
 
 .storyboard {
@@ -239,7 +257,7 @@ body {
   font-weight: 500;
 }
 .envelope-wrapper.active {
-  animation: fadeOut 2s 0.5s forwards;
+  animation: fadeOut 1.5s 0.5s forwards;
 }
 .envelope-wrapper.active .fa-envelope {
   display: none;
@@ -332,6 +350,10 @@ body.dark-to-light {
   visibility: visible;
   z-index: 1;
 }
+.confetti .heart-wrapper {
+  position: relative;
+  animation: raise 1.3s 4s forwards;
+}
 .confetti .top-text,
 .confetti .bottom-text {
   font-weight: bold;
@@ -339,17 +361,34 @@ body.dark-to-light {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  pointer-events: none;
 }
 .confetti .top-text {
-  top: 15%;
+  top: -18%;
   font-size: 90px;
   text-transform: uppercase;
   color: hotpink;
   mix-blend-mode: multiply;
   white-space: nowrap;
+  transition-duration: 1s;
+  transition-delay: 1s;
+  left: -50%;
+  opacity: 0;
+}
+.confetti .top-text.active {
+  left: 50%;
+  opacity: 1;
 }
 .confetti .bottom-text {
   font-size: 80px;
-  top: 70%;
+  top: 100%;
   color: violet;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition-duration: 1s;
+  transition-delay: 2s;
+}
+.confetti .bottom-text.active {
+  top: 75%;
+  opacity: 1;
 }

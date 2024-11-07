@@ -103,3 +103,13 @@
         scale: .7;
     }
 }
+@keyframes raise {
+    0% {
+        margin-bottom: 0;
+        scale: 1;
+    }
+    100% {
+        margin-bottom: 15%;
+        scale: .8;
+    }
+}

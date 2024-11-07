@@ -29,6 +29,11 @@ body.dark-to-light {
         }
     }
 
+    .heart-wrapper {
+        position: relative;
+        animation: raise 1.3s 4s forwards;
+    }
+
     .top-text,
     .bottom-text {
         font-weight: bold;
@@ -36,18 +41,37 @@ body.dark-to-light {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        pointer-events: none;
     }
     .top-text {
-        top: 15%;
+        top: -18%;
         font-size: 90px;
         text-transform: uppercase;
         color: hotpink;
         mix-blend-mode: multiply;
         white-space: nowrap;
+        transition-duration: 1s;
+        transition-delay: 1s;
+        left: -50%;
+        opacity: 0;
+
+        &.active {
+            left: 50%;
+            opacity: 1;
+        }
     }
     .bottom-text {
         font-size: 80px;
-        top: 70%;
+        top: 100%;
         color: violet;
+        text-shadow: 0 0 12px rgba(0,0,0,.25);
+        opacity: 0;
+        transition-duration: 1s;
+        transition-delay: 2s;
+
+        &.active {
+            top: 75%;
+            opacity: 1;
+        }
     }
 }

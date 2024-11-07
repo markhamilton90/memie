@@ -30,10 +30,17 @@ const startingVal = parseInt(counterElement.textContent)
 const screen = document.querySelector('.mask')
 let intervalID = null
 
+let countComplete = false
+
 const countdown = document.querySelector('.countdown')
 countdown.addEventListener('transitionstart', e => {
+
+    if (countComplete) {
+        return
+    }
+
     if (e.propertyName == 'opacity') {
-        intervalID = setInterval(countDown, 100)
+        intervalID = setInterval(countDown, 70)
     }
 })
 
@@ -46,9 +53,16 @@ function countDown() {
 
     if (days == daysRemaining) {
         clearInterval(intervalID)
+        countComplete = true
         document.querySelector('.countdown').classList.add('lower')
     }
 }
+
+let countdown1Text = `Only ${daysRemaining} days babe`
+let countdown2Text = `${daysRemaining} days, until I can finally hold you in my arms 😏 🥰`
+
+document.getElementById('countdown1').textContent = countdown1Text
+document.getElementById('countdown2').textContent = countdown2Text
 
 document.querySelector('.countdown-wrapper').addEventListener('animationend', e => {
     if (e.animationName == 'lower') {
@@ -84,16 +98,11 @@ const balloon = document.getElementById('balloon')
 const heartWrapper = document.querySelector('.heart-wrapper')
 balloon.addEventListener('click', e => {
     e.target.width += 4
-    // confetti()
-    confetti({
-        // particleCount: 10,
-        // spread: 1,
-        // angle: 90
-    });
+    confetti()
 
     if (e.target.width >= 200) {
         e.target.classList.add('hidden')
-        heartWrapper.classList.remove('hidden')
+        heartWrapper.classList.replace('hidden', 'active')
 
         document.body.classList.add('dark-to-light')
 
@@ -102,6 +111,22 @@ balloon.addEventListener('click', e => {
             audio.currentTime = 4
             audio.play()
         }, 1000)
+    }
+})
+
+let topText = document.querySelector('.heart-wrapper .top-text')
+let bottomText = document.querySelector('.heart-wrapper .bottom-text')
+
+document.body.addEventListener('animationend', e => {
+    if (e.animationName == 'darkToLight') {
+        topText.classList.add('active')
+        bottomText.classList.add('active')
+    }
+})
+
+bottomText.addEventListener('transitionend', e => {
+    if (e.propertyName == 'top') {
+        document.getElementById('birthday1').classList.add('active')
     }
 })
 
@@ -115,4 +140,8 @@ function nextStoryboard() {
 
     let active = document.querySelector(`.storyboard[data-storyboard="${window.storyboard}"]`)
     active.classList.add('active')
+
+    if (active.classList.contains('confetti')) {
+        document.getElementById('balloon1').classList.add('active')
+    }
 }
